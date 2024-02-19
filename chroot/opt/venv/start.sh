@@ -62,6 +62,13 @@ if hasvalue $PRESENCE; then
 	fi
 fi
 
+if hasvalue $GENERAL_PRESENCE; then
+	if ! [[ $GENERAL_PRESENCE =~ (true|false) ]]; then
+		echo "WARNING : Wrong value for GENERAL_PRESENCE environment variable, will use default - false"
+		GENERAL_PRESENCE=false
+	fi
+fi
+
 if hasvalue $BLE; then
 	if ! [[ $BLE =~ (true|false) ]]; then
 		echo "WARNING : Wrong value for BLE environment variable, will use default - true"
@@ -176,6 +183,7 @@ echo "Creating config at $CONFIG ..."
     "subscribe_topic": "${MQTT_SUB_TOPIC:-home/+/BTtoMQTT/undecoded}",
     "presence_topic": "${MQTT_PRE_TOPIC:-home/presence/TheengsGateway}",
     "presence": ${PRESENCE:-false},
+    "general_presence": ${GENERAL_PRESENCE:-false},
     "publish_all": ${PUBLISH_ALL:-true},
     "publish_advdata": ${PUBLISH_ADVDATA:-false},
     "ble_scan_time": ${SCAN_TIME:-60},

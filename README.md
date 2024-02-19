@@ -105,6 +105,7 @@ docker run --rm \
     -e MQTT_SUB_TOPIC=home/+/BTtoMQTT/undecoded \
     -e MQTT_PRE_TOPIC=home/presence/TheengsGateway \
     -e PRESENCE=false \
+    -e GENERAL_PRESENCE=false \
     -e PUBLISH_ALL=true \
     -e PUBLISH_ADVDATA=false \
     -e TIME_BETWEEN=60 \

@@ -12,6 +12,7 @@ services:
       MQTT_SUB_TOPIC: home/+/BTtoMQTT/undecoded
       MQTT_PRE_TOPIC: home/presence/TheengsGateway
       PRESENCE: false
+      GENERAL_PRESENCE: false
       PUBLISH_ALL: true
       PUBLISH_ADVDATA: false
       TIME_FORMAT: false

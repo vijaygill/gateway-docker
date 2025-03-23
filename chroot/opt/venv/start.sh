@@ -214,6 +214,16 @@ EOF
         echo ",    \"bindkeys\": $BINDKEYS"
     fi
 
+    # Conditionally include WHITELIST if not empty
+    if [ -n "$WHITELIST" ]; then
+        echo ",    \"whitelist\": $WHITELIST"
+    fi
+
+    # Conditionally include BLACKLIST if not empty
+    if [ -n "$BLACKLIST" ]; then
+        echo ",    \"blacklist\": $BLACKLIST"
+    fi
+
     echo "}"
 } > $CONFIG
 
